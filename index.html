@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hari ❤️ Lavanya  Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+-webkit-tap-highlight-color:transparent;
+}
+
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:60px 20px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.main-title{
+font-family:Cinzel;
+font-size:54px;
+letter-spacing:4px;
+margin-bottom:25px;
+z-index:2;
+}
+
+.subtitle{
+max-width:760px;
+line-height:1.9;
+font-size:18px;
+opacity:0.9;
+z-index:2;
+}
+
+button{
+padding:14px 34px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff006a,#ff4da6);
+color:white;
+cursor:pointer;
+margin-top:35px;
+font-size:16px;
+z-index:2;
+}
+
+img{
+user-select:none;
+-webkit-user-drag:none;
+}
+
+
+#intro{
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+overflow:hidden;
+}
+
+.door{
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:#111;
+transition:1.8s ease;
+z-index:2;
+}
+
+.left{
+left:0;
+border-right:1px solid #333;
+}
+
+.right{
+right:0;
+border-left:1px solid #333;
+}
+
+#heroName{
+font-family:Cinzel;
+font-size:60px;
+letter-spacing:5px;
+opacity:0;
+transform:scale(0.7);
+transition:1.5s ease;
+z-index:3;
+padding:0 20px;
+text-align:center;
+}
+
+.enter-btn{
+padding:14px 34px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff006a,#ff4da6);
+color:white;
+cursor:pointer;
+margin-top:35px;
+z-index:3;
+}
+
+.open .left{
+transform:translateX(-100%);
+}
+
+.open .right{
+transform:translateX(100%);
+}
+
+.open #heroName{
+opacity:1;
+transform:scale(1);
+}
+
+
+.hero-theme{
+background:#050505;
+}
+
+.hero-theme::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:#ff008055;
+filter:blur(140px);
+top:-100px;
+left:-100px;
+animation:moveGlow 8s infinite alternate;
+}
+
+@keyframes moveGlow{
+from{
+transform:translate(0,0);
+}
+to{
+transform:translate(180px,120px);
+}
+}
+
+
+.gold-theme{
+background:linear-gradient(135deg,#1a1200,#3b2400);
+}
+
+
+.romantic-theme{
+background:linear-gradient(135deg,#2a0f1d,#3a1d2d);
+}
+
+
+.glass-theme{
+background:linear-gradient(135deg,#111827,#1f2937);
+}
+
+
+.traditional-theme{
+background:linear-gradient(135deg,#2b0000,#5a1010);
+}
+
+
+
+.venue-theme{
+background:linear-gradient(135deg,#08131f,#13293d);
+}
+
+
+.particles{
+position:absolute;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.particle{
+position:absolute;
+top:-50px;
+animation:fall linear infinite;
+opacity:0.8;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+#scratchTitle{
+margin-bottom:18px;
+font-size:18px;
+letter-spacing:2px;
+opacity:0.8;
+z-index:2;
+}
+
+#scratchBox{
+width:340px;
+height:190px;
+border-radius:24px;
+overflow:hidden;
+position:relative;
+box-shadow:0 0 30px rgba(255,255,255,0.1);
+z-index:2;
+}
+
+#hiddenContent{
+position:absolute;
+inset:0;
+background:linear-gradient(45deg,#c79a00,#ffdb58);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+font-size:24px;
+font-weight:600;
+color:black;
+}
+
+#revealTime{
+font-size:18px;
+margin-top:10px;
+}
+
+#timer{
+margin-top:14px;
+font-size:18px;
+font-weight:500;
+}
+
+canvas{
+position:absolute;
+top:0;
+left:0;
+}
+
+
+.quote-box{
+max-width:850px;
+font-size:30px;
+line-height:1.8;
+font-family:Cinzel;
+color:#ffd6ea;
+z-index:2;
+}
+
+
+.events{
+width:100%;
+max-width:1000px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:40px;
+z-index:2;
+}
+
+.event-card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:28px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.4s;
+}
+
+.event-card:hover{
+transform:translateY(-10px);
+}
+
+.event-card img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:18px;
+border:3px solid rgba(255,255,255,0.15);
+}
+
+.event-title{
+font-size:28px;
+font-family:Cinzel;
+margin-bottom:15px;
+}
+
+.event-time{
+line-height:1.9;
+opacity:0.88;
+font-size:15px;
+}
+
+
+.timeline{
+margin-top:50px;
+width:100%;
+max-width:900px;
+z-index:2;
+}
+
+.timeline-item{
+display:flex;
+align-items:flex-start;
+gap:20px;
+margin-bottom:35px;
+text-align:left;
+}
+
+.timeline-dot{
+min-width:18px;
+height:18px;
+border-radius:50%;
+background:#ffcc66;
+margin-top:8px;
+box-shadow:0 0 20px #ffcc66;
+}
+
+.timeline-content h3{
+font-size:22px;
+margin-bottom:8px;
+font-family:Cinzel;
+}
+
+.timeline-content p{
+opacity:0.85;
+line-height:1.8;
+}
+
+
+.location{
+font-size:20px;
+line-height:2;
+opacity:0.92;
+margin-top:20px;
+z-index:2;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 30px;
+border-radius:50px;
+background:#ff006a;
+color:white;
+text-decoration:none;
+z-index:2;
+}
+
+
+
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#111;
+border:1px solid #333;
+padding:12px 18px;
+border-radius:50px;
+cursor:pointer;
+z-index:999;
+}
+
+.footer{
+padding:40px 20px;
+text-align:center;
+font-size:14px;
+opacity:0.7;
+background:black;
+}
+
+
+
+@media(max-width:768px){
+
+#heroName{
+font-size:38px;
+}
+
+.main-title{
+font-size:34px;
+}
+
+.subtitle{
+font-size:16px;
+}
+
+.quote-box{
+font-size:22px;
+}
+
+#scratchBox{
+width:92%;
+height:190px;
+}
+
+canvas{
+width:100%;
+height:100%;
+}
+
+.timeline-item{
+gap:14px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+
+<div class="door left"></div>
+<div class="door right"></div>
+
+<div id="heroName">
+Hari Weds Lavanya
+</div>
+
+<button class="enter-btn" onclick="startExperience()">
+Tap the button
+</button>
+
+</div>
+
+
+<audio id="music" preload="auto" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<div id="musicBtn" onclick="toggleMusic()">
+🎵 Music
+</div>
+
+
+<section class="hero-theme">
+
+<div class="particles" id="heroParticles"></div>
+
+<h1 class="main-title">
+A FOREVER STORY
+</h1>
+
+<p class="subtitle">
+Together with our families, we invite you to celebrate love,
+laughter, blessings and the beginning of our forever journey.
+</p>
+
+<button onclick="scrollToSection('reveal')">
+Begin Journey
+</button>
+
+</section>
+
+<section class="gold-theme" id="reveal">
+
+<div class="particles" id="goldParticles"></div>
+
+<div id="scratchTitle">
+SCRATCH TO REVEAL
+</div>
+
+<div id="scratchBox">
+
+<div id="hiddenContent">
+
+<div>
+💍 21 JUNE 2026
+</div>
+
+<div id="revealTime">
+Muhurtham • 2:35 AM
+</div>
+
+<div id="timer"></div>
+
+</div>
+
+<canvas id="canvas"></canvas>
+
+</div>
+
+</section>
+
+
+<section class="romantic-theme">
+
+<div class="particles" id="romanticParticles"></div>
+
+<div class="quote-box">
+“Two hearts, one journey, and a lifetime of beautiful chaos together ❤️”
+</div>
+
+</section>
+
+
+<section class="glass-theme">
+
+<div class="particles" id="glassParticles"></div>
+
+<h1 class="main-title">
+Wedding Events
+</h1>
+
+<div class="events">
+
+<div class="event-card">
+
+<img loading="lazy" src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=400">
+
+<div class="event-title">
+💛 Haldi
+</div>
+
+<div class="event-time">
+Saturday<br>
+Traditional Haldi Ceremony
+</div>
+
+</div>
+
+<div class="event-card">
+
+<img loading="lazy" src="https://images.unsplash.com/photo-1525258946800-98cfd641d0de?q=80&w=400">
+
+<div class="event-title">
+✨ Reception
+</div>
+
+<div class="event-time">
+Sunday • 7:00 PM onwards<br>
+Dinner Starts After Reception
+</div>
+
+</div>
+
+<div class="event-card">
+
+<img loading="lazy" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400">
+
+<div class="event-title">
+💍 Muhurtham
+</div>
+
+<div class="event-time">
+Monday Early Morning<br>
+22 June 2026 • 2:35 AM
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="traditional-theme">
+
+<div class="particles" id="traditionalParticles"></div>
+
+<h1 class="main-title">
+Celebration Timeline
+</h1>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+<h3>Saturday — Haldi</h3>
+<p>
+A joyful celebration filled with traditions, laughter and family blessings.
+</p>
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+<h3>Sunday Evening — Reception</h3>
+<p>
+Reception begins at 7:00 PM followed by dinner with friends and family.
+</p>
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+<h3>Monday • 2:35 AM — Muhurtham</h3>
+<p>
+The sacred wedding rituals and the beginning of our lifelong journey together.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="venue-theme">
+
+<h1 class="main-title">
+Venue
+</h1>
+
+<div class="location">
+
+Chuchukonda<br>
+Munakapaka Mandal<br>
+Andhra Pradesh
+
+</div>
+
+<a
+class="map-btn"
+href="https://maps.google.com/?q=Chuchukonda,Munakapaka,Andhra+Pradesh"
+target="_blank">
+
+Open Google Maps
+
+</a>
+
+</section>
+
+<div class="footer">
+With love, Lavanya ❤️ Hari
+</div>
+
+<script>
+
+
+function startExperience(){
+
+document.getElementById("intro").classList.add("open");
+
+startMusic();
+
+setTimeout(()=>{
+
+document.getElementById("intro").style.display = "none";
+
+},1800);
+
+}
+
+
+let started = false;
+
+function startMusic(){
+
+if(started) return;
+
+const music = document.getElementById("music");
+
+music.volume = 0;
+
+music.play().then(()=>{
+
+started = true;
+
+let fade = setInterval(()=>{
+
+if(music.volume < 1){
+music.volume += 0.05;
+}else{
+clearInterval(fade);
+}
+
+},200);
+
+}).catch(err=>{
+
+console.log("Autoplay blocked");
+
+});
+
+}
+
+function toggleMusic(){
+
+const music = document.getElementById("music");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+
+}
+
+function scrollToSection(id){
+
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+
+}
+const targetDate = new Date(2026, 5, 21, 2, 35, 0).getTime();
+
+function updateCountdown(){
+const now = Date.now();
+const diff = targetDate - now;
+
+if(diff <= 0){
+document.getElementById("timer").innerHTML="It's the big day 💍";
+return;
+}
+
+const days = Math.floor(diff/(1000*60*60*24));
+const hours = Math.floor((diff/(1000*60*60))%24);
+const minutes = Math.floor((diff/(1000*60))%60);
+const seconds = Math.floor((diff/1000)%60);
+
+document.getElementById("timer").innerHTML =
+`${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+const canvas=document.getElementById("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=340;
+canvas.height=190;
+
+ctx.fillStyle="#777";
+ctx.fillRect(0,0,340,190);
+
+let drawing=false;
+
+function getPos(e){
+const rect=canvas.getBoundingClientRect();
+return{
+x:(e.touches?e.touches[0].clientX:e.clientX)-rect.left,
+y:(e.touches?e.touches[0].clientY:e.clientY)-rect.top
+};
+}
+
+function scratch(e){
+e.preventDefault();
+const pos=getPos(e);
+
+ctx.globalCompositeOperation="destination-out";
+ctx.beginPath();
+ctx.arc(pos.x,pos.y,22,0,Math.PI*2);
+ctx.fill();
+}
+
+canvas.addEventListener("mousedown",()=>drawing=true);
+canvas.addEventListener("mouseup",()=>drawing=false);
+canvas.addEventListener("mouseleave",()=>drawing=false);
+canvas.addEventListener("mousemove",(e)=>drawing&&scratch(e));
+
+canvas.addEventListener("touchstart",(e)=>{drawing=true;scratch(e);},{passive:false});
+canvas.addEventListener("touchend",()=>drawing=false);
+canvas.addEventListener("touchcancel",()=>drawing=false);
+canvas.addEventListener("touchmove",(e)=>drawing&&scratch(e),{passive:false});
+
+
+function createParticles(containerId, symbols){
+
+const container = document.getElementById(containerId);
+
+for(let i=0;i<22;i++){
+
+let particle = document.createElement("div");
+
+particle.classList.add("particle");
+
+particle.innerHTML =
+symbols[Math.floor(Math.random()*symbols.length)];
+
+particle.style.left = Math.random()*100 + "vw";
+
+particle.style.animationDuration =
+5 + Math.random()*7 + "s";
+
+particle.style.fontSize =
+16 + Math.random()*18 + "px";
+
+particle.style.opacity = Math.random();
+
+container.appendChild(particle);
+
+}
+
+}
+
+createParticles("heroParticles",["🌸","✨"]);
+createParticles("goldParticles",["⭐","✨","💫"]);
+createParticles("romanticParticles",["❤️","🌷"]);
+createParticles("glassParticles",["✨"]);
+createParticles("traditionalParticles",["🪔","🌼","✨"]);
+
+</script>
+
+</body>
+</html>
